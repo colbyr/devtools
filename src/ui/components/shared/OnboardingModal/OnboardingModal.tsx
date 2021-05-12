@@ -5,64 +5,27 @@ import { actions } from "ui/actions";
 
 const slides = [
   {
-    header: "Welcome to your Library 👋",
-    content: (
-      <div className="text-xl">{`There's nothing here yet, so let's record your first replay.`}</div>
-    ),
-  },
-  {
-    header: "Open the Replay browser",
+    header: "Welcome to Replay! 👋",
     content: (
       <>
         <div className="text-xl space-y-4">
-          <div>
-            {`First, download and install the browser by following the instructions `}
+          <div className="space-y-4 bold text-2xl">{`Here's how to get started:`}</div>
+
+          <li>
+            {`In the `}
             <a
               href="https://replay.io/welcome"
               target="_blank"
               rel="noreferrer"
               className="text-blue-600 underline"
             >
-              here
+              Replay browser
             </a>
-            .
-          </div>
-          <div>
-            {`Once it's installed, go ahead and open that browser and sign in. We'll wait for you there!`}
-          </div>
-        </div>
-      </>
-    ),
-  },
-  {
-    header: "The record button",
-    content: (
-      <>
-        <div className="text-xl space-y-4">
-          <div>{`The Replay browser should look familiar with one exception: the big blue Record button on the top right.`}</div>
-          <div>{`Found it? Good. It's your new best friend from here on out.`}</div>
-        </div>
-      </>
-    ),
-  },
-  {
-    header: "Starting your first recording",
-    content: (
-      <>
-        <div className="text-xl space-y-4">
-          <div>{`To record a website, you first have to open a new separate tab and go to that URL.`}</div>
-          <div>{`Once the website is open, click the record button to refresh and start recording.`}</div>
-        </div>
-      </>
-    ),
-  },
-  {
-    header: "Saving your first recording",
-    content: (
-      <>
-        <div className="text-xl space-y-4">
-          <div>{`Once you're finished recording, simply hit the stop button.`}</div>
-          <div>{`Doing so will go ahead and save your recording and give you a shareable link. That's it!`}</div>
+            ,{` open a website in a new tab.`}
+          </li>
+          <li>{`Press the red record button to begin recording.`}</li>
+          <li>{`Press again to stop.`}</li>
+          <li>{`That's it! We'll show you the recording and you can dive in.`}</li>
         </div>
       </>
     ),
