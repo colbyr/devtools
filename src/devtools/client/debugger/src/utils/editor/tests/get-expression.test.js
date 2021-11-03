@@ -4,13 +4,20 @@
 
 //
 
-import CodeMirror from "codemirror";
 import { getExpressionFromCoords } from "../get-expression";
 
 describe("get-expression", () => {
+  const originalCreateRange = document.createRange;
+
+  let CodeMirror;
   let isCreateTextRangeDefined;
 
   beforeAll(() => {
+    // document.createRange seems to be defined in jsdom now,
+    // so remove it to hit the old test path in CodeMirror
+    document.createRange = undefined;
+    CodeMirror = require("codemirror");
+
     if (document.body.createTextRange) {
       isCreateTextRangeDefined = true;
     } else {
@@ -25,6 +32,7 @@ describe("get-expression", () => {
   });
 
   afterAll(() => {
+    document.createRange = originalCreateRange;
     if (!isCreateTextRangeDefined) {
       delete document.body.createTextRange;
     }
