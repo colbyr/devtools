@@ -10,6 +10,7 @@ import consoleReducers from "devtools/client/webconsole/reducers";
 import * as consoleSelectors from "devtools/client/webconsole/selectors";
 import * as debuggerSelectors from "devtools/client/debugger/src/selectors";
 import * as inspectorReducers from "devtools/client/inspector/reducers";
+import fullTextSearch, * as fullTextSearchSelectors from "./fullTextSearch";
 
 export const reducers = {
   app,

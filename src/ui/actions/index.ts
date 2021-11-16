@@ -19,6 +19,8 @@ import { EventTooltipAction } from "devtools/client/inspector/markup/actions/eve
 import UserProperties from "devtools/client/inspector/rules/models/user-properties";
 import consoleActions from "devtools/client/webconsole/actions";
 import { NetworkAction } from "./network";
+import type { FullTextSearchAction } from "./fullTextSearch";
+import * as fullTextSearchActions from "./fullTextSearch";
 
 type DebuggerAction = Action<"RESUME" | "CLEAR_FRAME_POSITIONS">;
 
@@ -27,6 +29,7 @@ export type UIAction =
   | CommentsAction
   | DebuggerAction
   | EventTooltipAction
+  | FullTextSearchAction
   | MarkupAction
   | NetworkAction
   | ReactDevToolsAction
@@ -48,4 +51,5 @@ export const actions = {
   ...debuggerActions,
   ...consoleActions,
   ...sessionActions,
+  ...fullTextSearchActions,
 };
