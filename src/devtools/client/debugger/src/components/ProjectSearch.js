@@ -9,6 +9,7 @@ import React, { Component } from "react";
 import { connect } from "../utils/connect";
 import classnames from "classnames";
 import actions from "../actions";
+import { startFullTextSearch } from "ui/actions/fullTextSearch";
 
 import { getEditor } from "../utils/editor";
 import { highlightMatches } from "../utils/project-search";
@@ -72,7 +73,7 @@ export class ProjectSearch extends Component {
 
   doSearch(searchTerm) {
     trackEvent("project_search.search");
-    this.props.searchSources(this.props.cx, searchTerm);
+    this.props.startFullTextSearch(searchTerm);
   }
 
   toggleProjectTextSearch = e => {
@@ -279,9 +280,9 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, {
   closeProjectSearch: actions.closeProjectSearch,
-  searchSources: actions.searchSources,
   clearSearch: actions.clearSearch,
   selectSpecificLocation: actions.selectSpecificLocation,
   setActiveSearch: actions.setActiveSearch,
   doSearchForHighlight: actions.doSearchForHighlight,
+  startFullTextSearch,
 })(ProjectSearch);
